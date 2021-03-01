@@ -7,4 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipes-book';
+
+  recipes: boolean = false;
+  shoppingList: boolean = false;
+
+  onPanelChoosen(panel:string){
+    if (panel === "Recipies"){
+      this.recipes = true; 
+      this.shoppingList = false;
+    }
+    else if (panel === "Shopping List" ) {
+      this.shoppingList = true ;
+      this.recipes = false;
+    }
+   
+  }
 }
