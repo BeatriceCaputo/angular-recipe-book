@@ -1,14 +1,16 @@
-import { StringDecoder } from "string_decoder";
+import { Ingridient } from "../shared/ingridient.model";
 
 export class Recipe {
     public name : string;
     public description : string;
     public imagePath : string;
+    public ingridients: Ingridient[]
 
-    constructor (name:string, desc:string, imagePath:string){
+    constructor (name:string, desc:string, imagePath:string, ingridients : Ingridient[]){
         this.name = name;
         this.description = desc;
         this.imagePath = imagePath;
+        this.ingridients = ingridients;
     }
 
     getName():string{
@@ -19,5 +21,8 @@ export class Recipe {
     }
     getImagePath():string{
         return this.imagePath;
+    }
+    getIngridients(): Ingridient[]{
+        return this.ingridients;
     }
 }
